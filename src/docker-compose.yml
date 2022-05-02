@@ -2,7 +2,7 @@ version: '3.8'
 services:
   db:
     image: postgres:latest
-    container_name: dva-backend-db
+    container_name: ar-backend-db
     ports:
       - 5432:5432
     networks:
@@ -23,7 +23,7 @@ services:
     build:
       context: .
       network: host
-    container_name: dva-backend
+    container_name: ar-backend
     depends_on:
       db:
         condition: service_healthy
@@ -39,5 +39,5 @@ volumes:
 
 networks:
   web_nw:
-    name: dva-backend
+    name: ar-backend
     driver: bridge
